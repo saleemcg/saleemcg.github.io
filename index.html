@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Saleem Akthar | Lighting & LookDev</title>
-  <style>
-    body {
-      margin: 0;
-      background: #111;
-      color: #eee;
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-    }
-    main { max-width: 900px; margin: auto; padding: 100px 24px; }
-    h1 { font-size: clamp(40px, 8vw, 80px); margin: 0; }
-    h2 { color: #b9c7bd; font-weight: normal; }
-    p { max-width: 600px; color: #aaa; }
-    a {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 12px 24px;
-      background: #b9c7bd;
-      color: #111;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Saleem Akthar — London-based lighting and look development artist. Explore selected CGI work, environments, product imagery and the 2026 showreel.">
+<meta name="theme-color" content="#101311">
+<title>Saleem Akthar | Lighting &amp; LookDev</title>
+<style>
+:root{color-scheme:dark;--bg:#101311;--text:#f0f1e9;--muted:#a4afa6;--line:#303932;--accent:#c8d9b1}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}a,button{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:6px}img{max-width:100%;display:block}button{cursor:pointer}.wrap{width:min(1320px,calc(100% - 96px));margin-inline:auto}.skip{position:fixed;top:-100px;left:20px;background:var(--accent);color:var(--bg);padding:10px;z-index:20}.skip:focus{top:10px}
+header{border-bottom:1px solid var(--line)}.nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-size:14px;letter-spacing:.12em;font-weight:700;display:flex;align-items:center;gap:14px}.monogram{border:1px solid #697365;border-radius:50%;width:36px;height:36px;display:grid;place-items:center;font-size:11px;letter-spacing:0}nav{display:flex;gap:30px;font-size:13px;color:var(--muted)}nav a:hover,.text-link:hover{color:var(--accent)}
+.intro{padding:66px 0 38px;display:flex;justify-content:space-between;align-items:end;gap:30px}.eyebrow{text-transform:uppercase;letter-spacing:.19em;font-size:10px;font-weight:700;color:var(--accent);margin:0 0 17px}h1{font-size:clamp(42px,5.5vw,78px);line-height:1.05;letter-spacing:-.055em;margin:0;font-weight:500}h1 span{color:var(--muted)}.intro-copy{max-width:290px;color:var(--muted);font-size:14px;margin:0 0 4px}.hero{position:relative;overflow:hidden;background:#1d302d}.hero img{width:100%;height:clamp(310px,42vw,570px);object-fit:cover;object-position:center 48%}.hero:after{content:"";position:absolute;inset:50% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.7));pointer-events:none}.hero-bottom{position:absolute;bottom:26px;left:30px;right:30px;display:flex;justify-content:space-between;align-items:center;gap:18px;z-index:1}.hero-label{font-size:12px;color:#fff}.hero-label small{display:block;opacity:.7;font-size:10px;letter-spacing:.13em;text-transform:uppercase}.pill{display:inline-flex;gap:20px;align-items:center;background:var(--text);color:#101311;border-radius:40px;padding:12px 23px;font-size:12px;font-weight:700}.pill:hover{background:var(--accent)}
+section{padding-top:100px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:32px}h2{font-size:clamp(30px,4vw,48px);font-weight:400;letter-spacing:-.04em;line-height:1.15;margin:0}.section-head p{font-size:12px;color:var(--muted);margin:0}.text-link{font-size:12px;border-bottom:1px solid #778374;padding-bottom:4px}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:36px 24px}.image-link{display:block;position:relative;background:#1a1d1a;overflow:hidden}.image-link img{width:100%;aspect-ratio:16/10;object-fit:contain;transition:filter .25s}.square .image-link img{aspect-ratio:1;object-fit:contain}.image-link:hover img{filter:brightness(1.08)}.expand{position:absolute;right:14px;bottom:14px;display:grid;place-items:center;width:32px;height:32px;background:rgba(10,15,11,.75);border:1px solid #667365;border-radius:50%;color:#fff}.caption{display:flex;align-items:center;justify-content:space-between;padding:17px 1px 0;gap:15px}.caption h3{font-size:16px;font-weight:400;margin:0}.caption p{font-size:11px;margin:4px 0 0;color:var(--muted)}.number{font-size:10px;color:#7d887e}
+.reel-shell{position:relative;aspect-ratio:16/9;background:#080b09;overflow:hidden}.reel-poster{height:100%;width:100%;border:0;padding:0;background:#14241b;color:#fff;position:relative;display:grid;place-items:center}.reel-poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}.play-content{position:relative;text-align:center;display:grid;justify-items:center;gap:18px}.play-circle{border:1px solid #c9d5c8;border-radius:50%;display:grid;place-items:center;width:86px;height:86px;font-size:22px;padding-left:4px;transition:background .2s}.reel-poster:hover .play-circle{background:#ffffff20}.play-content strong{font-size:clamp(18px,3vw,32px);font-weight:400;letter-spacing:-.02em}.play-content small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#d6dfd2}.reel-shell iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.reel-note{font-size:12px;color:var(--muted);margin-top:15px}.reel-note a{text-decoration:underline;text-underline-offset:4px}
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:70px;border-top:1px solid var(--line);margin-top:100px;padding-top:65px}.about-copy p{font-size:18px;line-height:1.75;color:#c0c8bf;margin:0 0 23px}.about-copy p.secondary{font-size:14px;color:var(--muted)}.tools{display:flex;gap:8px;flex-wrap:wrap;padding-top:6px}.tools span{font-size:11px;color:var(--muted);border:1px solid var(--line);padding:6px 12px;border-radius:20px}.contact{margin-top:90px;padding:55px 0 70px;border-top:1px solid var(--line)}.contact h2{font-size:clamp(38px,6vw,72px);margin:0 0 25px}.email{font-size:clamp(16px,3vw,29px);border-bottom:1px solid #65715f;padding-bottom:7px;overflow-wrap:anywhere}.contact-bottom{display:flex;justify-content:space-between;gap:24px;margin-top:42px;font-size:12px;color:var(--muted)}.socials{display:flex;gap:25px}footer{border-top:1px solid var(--line);padding:23px 0;color:#869184;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px}
+dialog{border:1px solid var(--line);background:#0b0e0c;color:var(--text);padding:16px;width:min(1500px,96vw);max-width:96vw;max-height:96dvh}dialog::backdrop{background:rgba(0,0,0,.92)}.viewer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;gap:20px}.viewer-top p{margin:0;font-size:13px}.close{background:transparent;border:1px solid #667365;color:var(--text);border-radius:30px;padding:7px 16px;font-size:12px}#viewer-image{max-height:80dvh;max-width:100%;margin:auto;object-fit:contain}.no-scroll{overflow:hidden}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{min-height:76px;gap:15px;flex-wrap:wrap;padding:17px 0}nav{gap:20px;font-size:12px}.brand{font-size:12px}.intro{padding-top:40px;display:block}.intro-copy{margin-top:22px;max-width:430px}.hero-bottom{left:17px;right:17px;bottom:18px}.hero-label{font-size:11px}.pill{padding:10px 17px;gap:12px}.hero img{height:350px}.gallery{gap:30px 16px}section{padding-top:65px}.section-head{align-items:start}.section-head p{max-width:130px;text-align:right}.caption h3{font-size:14px}.caption p{font-size:10px}.about{grid-template-columns:1fr;gap:28px;margin-top:65px;padding-top:45px}.about-copy p{font-size:16px}.contact{margin-top:60px;padding-top:42px}.contact-bottom{flex-direction:column}.number{display:none}}
+@media(max-width:480px){.gallery{grid-template-columns:1fr}h1{font-size:46px}.section-head .text-link{font-size:10px}.hero-label small{font-size:9px}.play-circle{width:60px;height:60px}.play-content{gap:10px}.hero img{height:300px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Saleem Akthar</h1>
-    <h2>Lighting · Look Development · CGI</h2>
-    <p>
-      London-based VFX artist focused on photorealistic imagery
-      through texturing, look development, lighting and rendering.
-    </p>
-    <a href="https://www.artstation.com/saleem">View my work</a>
-  </main>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap nav"><a class="brand" href="#" aria-label="Saleem Akthar home"><span class="monogram" aria-hidden="true">SA</span>SALEEM AKTHAR</a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#showreel">Showreel</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div></header>
+<main id="main" class="wrap">
+<div class="intro"><div><p class="eyebrow">Lighting &amp; Look Development · London</p><h1>Light. Material.<br><span>Atmosphere.</span></h1></div><p class="intro-copy">I'm Saleem, a VFX artist creating photorealistic imagery through lighting, look development and CGI.</p></div>
+<div class="hero"><img src="lake.png" alt="Mountain lake environment with a forest reflected in still water." fetchpriority="high" width="1920" height="1080"><div class="hero-bottom"><div class="hero-label"><small>Selected environment</small>Mountain lake</div><a class="pill" href="#showreel">Watch showreel <span aria-hidden="true">↗</span></a></div></div>
+<section id="work" aria-labelledby="work-heading"><div class="section-head"><div><p class="eyebrow">01 / Portfolio</p><h2 id="work-heading">Selected work</h2></div><p>Light, surface and detail.<br>Click an image to explore.</p></div><div class="gallery"><article class="project square">
+ <a class="image-link" href="burger.png" data-title="Burger study" aria-label="View Burger study full size"><img src="burger.png" alt="A photorealistic burger on a wooden board in warm directional light." loading="lazy" decoding="async"><span class="expand" aria-hidden="true">↗</span></a>
+ <div class="caption"><div><h3>Burger study</h3><p>Food · Look development</p></div><span class="number">01</span></div></article>
+<article class="project square">
+ <a class="image-link" href="no7.png" data-title="No7 Beauty" aria-label="View No7 Beauty full size"><img src="no7.png" alt="Two No7 skincare bottles surrounded by a flowing translucent form." loading="lazy" decoding="async"><span class="expand" aria-hidden="true">↗</span></a>
+ <div class="caption"><div><h3>No7 Beauty</h3><p>Product · CGI</p></div><span class="number">02</span></div></article>
+<article class="project ">
+ <a class="image-link" href="camper.png" data-title="Vintage camper" aria-label="View Vintage camper full size"><img src="camper.png" alt="A mint-green Volkswagen camper van in a grey studio." loading="lazy" decoding="async"><span class="expand" aria-hidden="true">↗</span></a>
+ <div class="caption"><div><h3>Vintage camper</h3><p>Automotive · Look development</p></div><span class="number">03</span></div></article>
+<article class="project ">
+ <a class="image-link" href="alpine.png" data-title="Alpine landscape" aria-label="View Alpine landscape full size"><img src="alpine.png" alt="A snow-covered mountain valley beneath a blue sky." loading="lazy" decoding="async"><span class="expand" aria-hidden="true">↗</span></a>
+ <div class="caption"><div><h3>Alpine landscape</h3><p>Environment · CGI</p></div><span class="number">04</span></div></article>
+<article class="project ">
+ <a class="image-link" href="lake.png" data-title="Mountain lake" aria-label="View Mountain lake full size"><img src="lake.png" alt="A forest and mountain reflected in a lake, with reeds and water lilies." loading="lazy" decoding="async"><span class="expand" aria-hidden="true">↗</span></a>
+ <div class="caption"><div><h3>Mountain lake</h3><p>Environment · CGI</p></div><span class="number">05</span></div></article>
+<article class="project ">
+ <a class="image-link" href="rock.png" data-title="Autumn rock formation" aria-label="View Autumn rock formation full size"><img src="rock.png" alt="A tall layered rock formation covered with autumn trees, with a figure for scale." loading="lazy" decoding="async"><span class="expand" aria-hidden="true">↗</span></a>
+ <div class="caption"><div><h3>Autumn rock formation</h3><p>Environment · Asset study</p></div><span class="number">06</span></div></article></div></section>
+<section id="showreel" aria-labelledby="reel-heading"><div class="section-head"><div><p class="eyebrow">02 / In motion</p><h2 id="reel-heading">Showreel 2026</h2></div><a class="text-link" href="https://vimeo.com/1166815167" target="_blank" rel="noopener noreferrer">Watch on Vimeo ↗</a></div><div class="reel-shell" id="reel-shell"><button class="reel-poster" id="play-reel" aria-label="Play Lighting and LookDev Reel 2026"><img src="alpine.png" alt="" loading="lazy"><span class="play-content"><span class="play-circle" aria-hidden="true">▶</span><strong>Lighting &amp; LookDev Reel</strong><small>Saleem Akthar · 2026</small></span></button></div><p class="reel-note">Prefer a separate player? <a href="https://vimeo.com/1166815167" target="_blank" rel="noopener noreferrer">Open the showreel on Vimeo.</a></p><noscript><p><a href="https://vimeo.com/1166815167">Watch the showreel on Vimeo</a></p></noscript></section>
+<section class="about" id="about" aria-labelledby="about-heading"><div><p class="eyebrow">03 / About</p><h2 id="about-heading">An eye for realism.<br>A feel for light.</h2></div><div class="about-copy"><p>I'm Saleem Akthar, a London-based VFX artist specialising in lighting, look development, texturing and rendering.</p><p class="secondary">My work spans film, television and commercial CGI. I enjoy finding the balance between creative intent and technical detail, from the way light moves across a surface to the small imperfections that make an image feel real.</p><div class="tools" aria-label="Core tools"><span>Houdini / Solaris</span><span>Maya</span><span>Arnold</span><span>Karma</span><span>V-Ray</span><span>Nuke</span></div></div></section>
+<section class="contact" id="contact" aria-labelledby="contact-heading"><p class="eyebrow">04 / Get in touch</p><h2 id="contact-heading">Let's create something.</h2><a class="email" href="mailto:saleemaktharj@gmail.com">saleemaktharj@gmail.com ↗</a><div class="contact-bottom"><span>London, United Kingdom</span><div class="socials"><a class="text-link" href="https://www.artstation.com/saleem" target="_blank" rel="noopener noreferrer">ArtStation ↗</a><a class="text-link" href="https://vimeo.com/1166815167" target="_blank" rel="noopener noreferrer">Vimeo ↗</a></div></div></section>
+</main>
+<footer><div class="wrap footer-inner"><span>Saleem Akthar · Lighting &amp; LookDev</span><a href="#">Back to top ↑</a></div></footer>
+<dialog id="viewer" aria-labelledby="viewer-title"><div class="viewer-top"><p id="viewer-title"></p><button class="close" id="close-viewer" autofocus>Close ×</button></div><img id="viewer-image" alt=""></dialog>
+<script>
+const viewer=document.getElementById('viewer');
+const viewerImage=document.getElementById('viewer-image');
+document.querySelectorAll('.image-link').forEach(link=>link.addEventListener('click',event=>{
+ if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||typeof viewer.showModal!=='function')return;
+ event.preventDefault();viewerImage.src=link.getAttribute('href');viewerImage.alt=link.querySelector('img').alt;
+ document.getElementById('viewer-title').textContent=link.dataset.title;
+ viewer.showModal();document.body.classList.add('no-scroll');
+}));
+document.getElementById('close-viewer').addEventListener('click',()=>viewer.close());
+viewer.addEventListener('close',()=>document.body.classList.remove('no-scroll'));
+viewer.addEventListener('click',event=>{if(event.target===viewer){const r=viewer.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)viewer.close();}});
+document.getElementById('play-reel').addEventListener('click',()=>{
+ const frame=document.createElement('iframe');frame.src='https://player.vimeo.com/video/1166815167?autoplay=1&dnt=1';
+ frame.title='Lighting & LookDev Reel 2026 — Saleem Akthar';frame.allow='autoplay; fullscreen; picture-in-picture';frame.allowFullscreen=true;
+ document.getElementById('reel-shell').replaceChildren(frame);frame.focus();
+});
+</script>
 </body>
 </html>
