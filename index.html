@@ -31,10 +31,6 @@ dialog{border:1px solid var(--line);background:#0b0e0c;color:var(--text);padding
 .poster-attribution{font-size:10px;color:var(--muted);margin:26px 0 0}
 @media(max-width:1000px){.credits-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:760px){.credits-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}.credit-caption h3{font-size:13px}.credits-intro{font-size:13px}#credits .section-head{align-items:flex-start;flex-wrap:wrap}}
-
-/* Closing prism render: retain the complete panoramic composition. */
-.prism-render{margin:0 auto;padding:0 0 24px}
-.prism-render img{width:100%;height:auto;background:#000}
 </style>
 </head>
 <body>
@@ -105,10 +101,6 @@ dialog{border:1px solid var(--line);background:#0b0e0c;color:var(--text);padding
 <section class="contact" id="contact" aria-labelledby="contact-heading"><p class="eyebrow">05 / Get in touch</p><h2 id="contact-heading">Let's create something.</h2><a class="email" href="mailto:saleemaktharj@gmail.com">saleemaktharj@gmail.com ↗</a><div class="contact-bottom"><span>London, United Kingdom</span><div class="socials"><a class="text-link" href="https://www.artstation.com/saleem" target="_blank" rel="noopener noreferrer">ArtStation ↗</a><a class="text-link" href="https://vimeo.com/1166815167" target="_blank" rel="noopener noreferrer">Vimeo ↗</a><a class="text-link" href="https://www.imdb.com/name/nm17399903/" target="_blank" rel="noopener noreferrer">IMDb ↗</a></div></div></section>
 </main>
 <footer><div class="wrap footer-inner"><span>Saleem Akthar · Lighting &amp; Rendering</span><a href="#">Back to top ↑</a></div></footer>
-<figure class="wrap prism-render">
-<img src="prism-light-dispersion.png" alt="A beam of white light passes through a triangular glass prism and separates into a vivid rainbow spectrum against a black background." width="1920" height="640" loading="lazy" decoding="async">
-<figcaption class="caption"><div><h3>Prism light dispersion</h3><p>Lighting · Optical study</p></div></figcaption>
-</figure>
 <dialog id="viewer" aria-labelledby="viewer-title"><div class="viewer-top"><p id="viewer-title"></p><button class="close" id="close-viewer" autofocus>Close ×</button></div><img id="viewer-image" alt=""></dialog>
 <script>
 const viewer=document.getElementById('viewer');
