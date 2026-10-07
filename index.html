@@ -31,6 +31,11 @@ dialog{border:1px solid var(--line);background:#0b0e0c;color:var(--text);padding
 .poster-attribution{font-size:10px;color:var(--muted);margin:26px 0 0}
 @media(max-width:1000px){.credits-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:760px){.credits-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}.credit-caption h3{font-size:13px}.credits-intro{font-size:13px}#credits .section-head{align-items:flex-start;flex-wrap:wrap}}
+
+/* Featured prism render: retain the complete panoramic composition. */
+.project.featured{grid-column:1/-1}
+.project.featured .image-link{background:#000}
+.project.featured .image-link img{aspect-ratio:auto;height:auto}
 </style>
 </head>
 <body>
@@ -39,7 +44,10 @@ dialog{border:1px solid var(--line);background:#0b0e0c;color:var(--text);padding
 <main id="main" class="wrap">
 <div class="intro"><div><p class="eyebrow">Lighting &amp; Rendering · London</p><h1>Light. Material.<br><span>Atmosphere.</span></h1></div><p class="intro-copy">I'm Saleem, a VFX artist focus on creating photorealistic lighting, look development and procedural environments.</p></div>
 <div class="hero"><img src="lake.png" alt="Mountain lake environment with a forest reflected in still water." fetchpriority="high" width="1920" height="1080"><div class="hero-bottom"><div class="hero-label"><small>environment</small>Mountain lake</div></div></div>
-<section id="work" aria-labelledby="work-heading"><div class="section-head"><div><p class="eyebrow">01 / Portfolio</p><h2 id="work-heading">Portfolio</h2></div></div><div class="gallery"><article class="project square">
+<section id="work" aria-labelledby="work-heading"><div class="section-head"><div><p class="eyebrow">01 / Portfolio</p><h2 id="work-heading">Portfolio</h2></div></div><div class="gallery"><article class="project featured">
+<a class="image-link" href="prism-light-dispersion.png" data-title="Prism light dispersion" aria-label="View Prism light dispersion full size"><img src="prism-light-dispersion.png" alt="A beam of white light passes through a triangular glass prism and separates into a vivid rainbow spectrum against a black background." width="1920" height="640" loading="lazy" decoding="async"><span class="expand" aria-hidden="true">↗</span></a>
+<div class="caption"><div><h3>Prism light dispersion</h3><p>Lighting · Optical study</p></div><span class="number">Featured</span></div></article>
+<article class="project square">
  <a class="image-link" href="burger.png" data-title="CG Burger" aria-label="View CG Burger full size"><img src="burger.png" alt="A photorealistic burger on a wooden board in warm directional light." loading="lazy" decoding="async"><span class="expand" aria-hidden="true">↗</span></a>
  <div class="caption"><div><h3>CG Burger</h3><p>Food · Look development</p></div><span class="number">01</span></div></article>
 <article class="project square">
