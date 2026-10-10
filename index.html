@@ -56,6 +56,11 @@ dialog{border:1px solid var(--line);background:#0b0e0c;color:var(--text);padding
 
 
 @media(max-width:760px){.intro-profile{max-width:480px;margin-top:26px}}
+/* Preserve the full prism composition at every screen size. */
+.hero.hero-prism{background:#000}
+.hero.hero-prism img{height:auto;object-fit:contain}
+.hero.hero-prism:after{display:none}
+@media(max-width:480px){.hero-prism .hero-bottom{position:static;padding:10px 17px;background:#000}}
 </style>
 </head>
 <body>
@@ -66,7 +71,7 @@ dialog{border:1px solid var(--line);background:#0b0e0c;color:var(--text);padding
 <p class="intro-copy">Hi I'm Saleem, a 3D artist specializing in lighting, look development and environments for film, television and advertising</p>
 <a class="text-link" href="#about">More about me <span aria-hidden="true">↗</span></a>
 </div></div>
-<div class="hero"><img src="lake.png" alt="Mountain lake environment with a forest reflected in still water." fetchpriority="high" width="1920" height="1080"><div class="hero-bottom"><div class="hero-label"><small>environment</small>Mountain lake</div></div></div>
+<div class="hero hero-prism"><img src="hero-prism.png" alt="A glass prism dispersing a white light beam into a rainbow spectrum against a black background." fetchpriority="high" width="1920" height="640"><div class="hero-bottom"><div class="hero-label"><small>Lighting study</small>Prism light dispersion</div></div></div>
 <section id="showreel" aria-labelledby="reel-heading"><div class="section-head"><div><p class="eyebrow">01 / In motion</p><h2 id="reel-heading">Showreel 2026</h2></div></div><div class="reel-shell" id="reel-shell"><button class="reel-poster" id="play-reel" aria-label="Play Lighting and LookDev Reel 2026"><img src="alpine.png" alt="" loading="lazy"><span class="play-content"><span class="play-circle" aria-hidden="true">▶</span><strong>Lighting &amp; LookDev Reel</strong><small>Saleem Akthar · 2026</small></span></button></div><noscript><p><a href="https://www.youtube.com/watch?v=G5xvSDm3RHg">Watch the showreel on YouTube</a></p></noscript><div class="artstation-cta" aria-labelledby="artstation-cta-heading">
 <div class="artstation-cta-copy"><h3 id="artstation-cta-heading">Explore more of my work</h3><p>Visit my ArtStation for the full portfolio and project breakdowns.</p></div>
 <a class="artstation-button" href="https://www.artstation.com/saleem" target="_blank" rel="noopener noreferrer">Visit my ArtStation <span aria-hidden="true">↗</span></a>
