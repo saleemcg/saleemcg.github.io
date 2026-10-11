@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Saleem Akthar — SA Interlock</title>
+  <rect width="64" height="64" rx="12" fill="#101311"/>
+  <path d="M32 30L40 15L60 51H50L40 32L36 39Z" fill="#f0f1e9"/>
+  <path d="M36 13H21C12 13 7 18 7 25C7 32 12 35 21 39L26 41C29 42 29 45 25 45H12L7 52H25C35 52 40 47 40 40C40 33 34 30 26 27L21 25C17 24 17 21 21 21H31Z" fill="#101311" stroke="#101311" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M36 13H21C12 13 7 18 7 25C7 32 12 35 21 39L26 41C29 42 29 45 25 45H12L7 52H25C35 52 40 47 40 40C40 33 34 30 26 27L21 25C17 24 17 21 21 21H31Z" fill="#f0f1e9"/>
+  <path d="M35 51L40.5 42L46 51Z" fill="#b7ca9f" stroke="#101311" stroke-width="1.4" stroke-linejoin="round"/>
+</svg>
