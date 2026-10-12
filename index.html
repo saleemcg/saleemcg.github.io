@@ -70,24 +70,25 @@ dialog{border:1px solid var(--line);background:#0b0e0c;color:var(--text);padding
 /* Single-column opening introduction and artwork preceding About. */
 .intro{display:block;padding:62px 0 30px}
 .intro-profile{max-width:940px;margin:0}
-.intro-profile .intro-copy{font-size:clamp(20px,2.2vw,28px);font-weight:500;line-height:1.55;letter-spacing:-.02em;margin:0 0 22px}
+.intro-profile .intro-copy{font-size:14px;font-weight:500;line-height:1.75;letter-spacing:normal;margin:0 0 18px}
 #showreel{padding-top:38px}
 .hero-prism{margin-top:100px}
 .hero-prism + .about{margin-top:40px;padding-top:45px}
-@media(max-width:760px){.intro{padding:38px 0 22px}.intro-profile{margin:0;max-width:100%}.intro-profile .intro-copy{font-size:21px;line-height:1.6}#showreel{padding-top:28px}.hero-prism{margin-top:65px}.hero-prism + .about{margin-top:28px;padding-top:35px}}
+@media(max-width:760px){.intro{padding:38px 0 22px}.intro-profile{margin:0;max-width:100%}.intro-profile .intro-copy{font-size:14px;line-height:1.75}#showreel{padding-top:28px}.hero-prism{margin-top:65px}.hero-prism + .about{margin-top:28px;padding-top:35px}}
 
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .about-symbol{width:min(100%,280px);height:auto;margin-top:20px}
 @media(max-width:760px){.about-symbol{width:190px;margin-top:12px}}
+.brand-logo{width:36px;height:36px;flex:0 0 36px;object-fit:contain}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header><div class="wrap nav"><a class="brand" href="#" aria-label="Saleem Akthar home"><span class="monogram" aria-hidden="true">SA</span>SALEEM AKTHAR</a><nav aria-label="Main navigation"><a href="#showreel">Showreel</a><a href="#work">Work</a><a href="#credits">Credits</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div></header>
+<header><div class="wrap nav"><a class="brand" href="#" aria-label="Saleem Akthar home"><img class="brand-logo" src="favicon.svg?v=2" alt="" aria-hidden="true" width="36" height="36">SALEEM AKTHAR</a><nav aria-label="Main navigation"><a href="#showreel">Showreel</a><a href="#work">Work</a><a href="#credits">Credits</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div></header>
 <main id="main" class="wrap">
 <div class="intro"><div class="intro-profile">
 <p class="eyebrow">Lighting · Rendering · Environments</p>
-<h1 class="intro-copy">Hi, I'm Saleem. a 3D artist specializing in lighting, look development, and environments for films, television and advertising.</h1>
+<h1 class="intro-copy">Hi, I'm Saleem. a 3D artist specializing in lighting, look development and environments for films, television and advertising.</h1>
 <a class="text-link" href="#about">More about me <span aria-hidden="true">↗</span></a>
 </div></div>
 <section id="showreel" aria-labelledby="reel-heading"><div class="section-head"><div><p class="eyebrow">01 / In motion</p><h2 id="reel-heading">Showreel 2026</h2></div></div><div class="reel-shell" id="reel-shell"><button class="reel-poster" id="play-reel" aria-label="Play Reel 2026"><img src="alpine.png" alt="" loading="lazy"><span class="play-content"><span class="play-circle" aria-hidden="true">▶</span><strong>Reel</strong><small>Saleem Akthar · 2026</small></span></button></div><noscript><p><a href="https://vimeo.com/1166815167">Watch the showreel on Vimeo</a></p></noscript><div class="artstation-cta" aria-labelledby="artstation-cta-heading">
