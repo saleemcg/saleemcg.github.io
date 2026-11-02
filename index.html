@@ -16,7 +16,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Saleem Akthar","jobTitle":"Lighting and Look Development Artist","address":{"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"},"sameAs":["https://www.artstation.com/saleem","https://vimeo.com/1236531512","https://www.imdb.com/name/nm17399903/"]}
@@ -37,6 +37,7 @@
   --accent-hover:#f4e0b6;
   --accent-ink:#17130a;
   --font-display:"Plus Jakarta Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  --font-headline:"Newsreader",Georgia,"Times New Roman",serif;
   --font-body:"Hanken Grotesk","Segoe UI",Helvetica,Arial,sans-serif;
   --radius:8px;
   --gutter:clamp(18px,4vw,48px);
@@ -81,8 +82,18 @@ h2{margin:0;font-size:clamp(32px,4.4vw,52px);font-weight:600;letter-spacing:-.03
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 
 /* ---------- Intro ---------- */
-.intro{padding:clamp(48px,7vw,88px) 0 clamp(40px,6vw,64px)}
-h1{margin:0;max-width:28em;font-size:clamp(24px,2.6vw,36px);font-weight:600;line-height:1.22;letter-spacing:-.02em;text-wrap:balance}
+.intro{padding:clamp(44px,6vw,80px) 0 clamp(32px,5vw,56px)}
+h1{margin:0;max-width:22em;font:500 clamp(28px,3.3vw,46px)/1.16 var(--font-headline);letter-spacing:-.015em;text-wrap:balance}
+h1 em{font-style:italic;color:var(--accent)}
+.hairline{height:1px;background:linear-gradient(90deg,var(--line-strong),transparent)}
+.hairline-top{margin-bottom:32px}
+.hairline-bottom{margin-top:32px}
+
+/* hero backdrop: soft light and a faint render grid */
+.hero-fx{position:absolute;top:0;left:0;right:0;height:min(780px,95vh);z-index:-1;pointer-events:none;overflow:hidden;background:radial-gradient(640px 400px at 84% 6%,rgba(233,207,155,.17),transparent 70%),radial-gradient(520px 340px at 96% 32%,rgba(94,192,214,.11),transparent 70%),radial-gradient(480px 300px at 66% 0,rgba(232,120,96,.09),transparent 70%)}
+.hero-fx::before{content:"";position:absolute;top:-25%;right:10%;width:380px;height:1000px;background:linear-gradient(180deg,rgba(255,244,218,.12),transparent 72%);transform:rotate(26deg);filter:blur(34px)}
+.hero-fx::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(236,238,230,.14) 1px,transparent 1.3px);background-size:30px 30px;-webkit-mask-image:radial-gradient(ellipse 55% 75% at 82% 18%,#000,transparent 75%);mask-image:radial-gradient(ellipse 55% 75% at 82% 18%,#000,transparent 75%)}
+
 
 /* ---------- Showreel ---------- */
 #showreel{padding-top:0}
@@ -206,14 +217,15 @@ dialog::backdrop{background:rgba(0,0,0,.9);-webkit-backdrop-filter:blur(6px);bac
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="hero-fx" aria-hidden="true"></div>
 <header><div class="wrap nav"><a class="brand" href="#" aria-label="Saleem Akthar home"><img class="brand-logo" src="favicon.svg?v=2" alt="" aria-hidden="true" width="32" height="32">Saleem Akthar</a><nav aria-label="Main navigation"><a href="#showreel">Showreel</a><a href="#work">Work</a><a href="#credits">Credits</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div></header>
 
 <main id="main" class="wrap">
 
 <div class="intro">
-  <div>
-    <h1>Hi, I’m Saleem, a 3D artist specialising in lighting, look development and environments for film, television and advertising.</h1>
-  </div>
+  <div class="hairline hairline-top" aria-hidden="true"></div>
+  <h1>Hi, I’m Saleem, a 3D artist specialising in <em>lighting, look development and environments</em> for film, television and advertising.</h1>
+  <div class="hairline hairline-bottom" aria-hidden="true"></div>
 </div>
 
 <section id="showreel" aria-labelledby="reel-heading">
