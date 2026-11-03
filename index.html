@@ -144,10 +144,8 @@ h1 em{font-style:normal;color:var(--accent)}
 
 /* ---------- About ---------- */
 .about-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
-.about-figure{margin:0;max-width:420px}
-.about-figure img{width:100%;aspect-ratio:1;object-fit:cover;object-position:var(--prism-x,50%) 50%;border-radius:12px;border:1px solid var(--line);background:#000}
-.about-figure figcaption{margin-top:12px;font-size:13px;color:var(--muted)}
-.about-figure figcaption strong{color:var(--text);font-weight:500}
+.about-figure{margin:0;width:min(500px,100%)}
+.about-figure img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:var(--prism-x,50%) 50%;border-radius:12px;border:1px solid var(--line);background:#000}
 .about-copy .lead{margin:0 0 28px;font:500 clamp(22px,2.3vw,30px)/1.35 var(--font-display);letter-spacing:-.02em}
 .about-copy p{margin:0 0 18px;max-width:62ch;color:var(--muted);font-size:16px;line-height:1.75}
 .tools-label{margin:36px 0 12px;font-size:13px;color:var(--muted)}
@@ -186,7 +184,7 @@ dialog::backdrop{background:rgba(0,0,0,.9);-webkit-backdrop-filter:blur(6px);bac
 @media(max-width:820px){
   .credits-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .about-grid{grid-template-columns:1fr}
-  .about-figure{max-width:320px}
+  .about-figure{width:min(360px,100%)}
 }
 @media(max-width:760px){
   .nav{flex-wrap:wrap;padding:12px 0 8px;gap:4px}
@@ -303,8 +301,7 @@ dialog::backdrop{background:rgba(0,0,0,.9);-webkit-backdrop-filter:blur(6px);bac
   <div class="section-head"><h2 id="about-heading">About</h2></div>
   <div class="about-grid">
     <figure class="about-figure">
-      <img src="prism-light-dispersion.png" alt="A glass prism dispersing a white light beam into a rainbow spectrum." width="1000" height="1000" loading="lazy" decoding="async">
-      <figcaption><strong>Prism light dispersion</strong></figcaption>
+      <img src="prism-light-dispersion.png" alt="A glass prism dispersing a white light beam into a rainbow spectrum." width="500" height="500" loading="lazy" decoding="async">
     </figure>
     <div class="about-copy">
       <p class="lead">I’m Saleem Akthar, a London-based VFX artist specialising in lighting, look development, texturing and rendering.</p>
