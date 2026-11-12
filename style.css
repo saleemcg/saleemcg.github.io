@@ -237,3 +237,6 @@ nav a[aria-current="page"]{color:var(--text);background:var(--surface-2)}
 .caption h3 a:hover{color:var(--accent)}
 @media(max-width:900px){.practice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.practice-grid{grid-template-columns:1fr}}
+
+/* Tighten the gap between a page intro and the section that follows it */
+.project-top+section{padding-top:0}
