@@ -21,7 +21,7 @@
 <header><div class="wrap nav"><a class="brand" href="index.html" aria-label="Saleem Akthar home"><img class="brand-logo" src="favicon.svg?v=2" alt="" aria-hidden="true" width="32" height="32">Saleem Akthar</a><nav aria-label="Main navigation"><a href="ai-workflows.html" aria-current="page">AI workflows</a><a href="index.html#showreel">Showreel</a><a href="index.html#work">Work</a><a href="index.html#credits">Credits</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav></div></header>
 
 <main id="main" class="wrap">
-<!-- EDIT: replace the dashed workflow cards below with your own write-ups. Duplicate a card to add more. -->
+<!-- To add another workflow, copy the whole <article class="workflow"> block. -->
 <div class="project-top">
   <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Home</a>
   <h1 class="project-title">AI workflows</h1>
@@ -32,17 +32,34 @@
 
 <section aria-labelledby="workflows-heading">
   <div class="section-head"><h2 id="workflows-heading">Workflows</h2></div>
-  <div class="ai-grid">
-    <article class="ai-card">
-      <h3>Workflow title</h3>
-      <p>Describe the workflow: the problem it solves, the tools involved and how it fits into your pipeline.</p>
-      <ul class="tools"><li>Tool one</li><li>Tool two</li></ul>
-    </article>
-  </div>
+  <article class="workflow">
+    <div class="workflow-head">
+      <h3>Grey render to final image</h3>
+      <p>A simple grey Blender scene becomes a finished golden-hour street. Depth and Canny edge ControlNets in ComfyUI keep the generated image locked to the layout, camera and people of the original render.</p>
+      <ul class="tools" aria-label="Tools used"><li>Blender</li><li>ComfyUI</li><li>ControlNet</li></ul>
+    </div>
+    <div class="compare" id="compare" style="--pos:50%">
+      <img class="compare-img" src="ai/practice-01-final.jpg" alt="Final image generated in ComfyUI: a Japanese street at golden hour with red paper lanterns and people walking." width="1344" height="768" decoding="async" draggable="false">
+      <img class="compare-img compare-top" src="ai/practice-01-grey.jpg" alt="The grey Blender render the final image was generated from: the same street as plain grey geometry." width="1344" height="768" decoding="async" draggable="false">
+      <span class="compare-label compare-label-left" aria-hidden="true">Grey render</span>
+      <span class="compare-label compare-label-right" aria-hidden="true">Final image</span>
+      <input class="compare-range" type="range" min="0" max="100" step="0.1" value="50" aria-label="Drag to compare the grey render with the final image">
+      <span class="compare-line" aria-hidden="true"></span>
+      <span class="compare-handle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+    </div>
+    <noscript><p class="compare-note">Turn on JavaScript to use the comparison slider.</p></noscript>
+  </article>
 </section>
 
 </main>
 
 <footer><div class="wrap footer-inner"><span>© 2026 Saleem Akthar. Lighting, rendering and environments.</span><a href="#">Back to top ↑</a></div></footer>
+<script>
+document.querySelectorAll('.compare').forEach(function(box){
+ var range=box.querySelector('.compare-range');
+ function set(){box.style.setProperty('--pos',range.value+'%');}
+ range.addEventListener('input',set);set();
+});
+</script>
 </body>
 </html>
