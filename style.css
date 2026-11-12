@@ -238,5 +238,5 @@ nav a[aria-current="page"]{color:var(--text);background:var(--surface-2)}
 @media(max-width:900px){.practice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.practice-grid{grid-template-columns:1fr}}
 
-/* Tighten the gap between a page intro and the section that follows it */
-.project-top+section{padding-top:0}
+/* Page intro, then a hairline, then the content that follows it */
+.project-top+section{padding-top:clamp(28px,4vw,40px);border-top:1px solid var(--line)}
