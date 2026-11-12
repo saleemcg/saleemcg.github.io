@@ -196,9 +196,6 @@ nav a[aria-current="page"]{color:var(--text);background:var(--surface-2)}
 .page-cta{margin-top:clamp(48px,7vw,88px)}
 
 /* ---------- Before / after slider ---------- */
-.workflow-head{max-width:62ch;margin-bottom:clamp(22px,3vw,32px)}
-.workflow-head h3{margin:0 0 10px;font-size:clamp(22px,2.4vw,30px);font-weight:600;letter-spacing:-.025em;line-height:1.2}
-.workflow-head p{margin:0 0 20px;color:var(--muted);line-height:1.7}
 .compare{position:relative;aspect-ratio:1344/768;overflow:hidden;border-radius:12px;border:1px solid var(--line);background:#000;touch-action:pan-y;-webkit-user-select:none;user-select:none}
 .compare-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .compare-top{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
@@ -226,3 +223,17 @@ nav a[aria-current="page"]{color:var(--text);background:var(--surface-2)}
 .steps-grid .image-link img{aspect-ratio:16/9;object-fit:cover}
 .step figcaption{margin-top:10px;font-size:13px;color:var(--muted)}
 @media(max-width:700px){.steps-grid{grid-template-columns:1fr}}
+
+/* ---------- Practice list ---------- */
+.practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,40px) clamp(16px,2vw,24px)}
+.practice-card{min-width:0}
+.thumb{display:block;position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);background:#000;transition:border-color .2s}
+.thumb:hover{border-color:var(--line-strong)}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:filter .3s}
+.thumb:hover img{filter:brightness(1.07)}
+.thumb-grey{clip-path:inset(0 50% 0 0)}
+.thumb::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;background:var(--text);box-shadow:0 0 10px rgba(0,0,0,.5)}
+.caption h3 a{transition:color .2s}
+.caption h3 a:hover{color:var(--accent)}
+@media(max-width:900px){.practice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.practice-grid{grid-template-columns:1fr}}

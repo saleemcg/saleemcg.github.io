@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Practice 01: a grey Blender render taken to a finished image in ComfyUI, with the inputs and node graph.">
+<meta name="theme-color" content="#0f1110">
+<title>AI workflow practice 01 | Saleem Akthar</title>
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="favicon.png?v=2" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="hero-fx" aria-hidden="true"></div>
+<header><div class="wrap nav"><a class="brand" href="index.html" aria-label="Saleem Akthar home"><img class="brand-logo" src="favicon.svg?v=2" alt="" aria-hidden="true" width="32" height="32">Saleem Akthar</a><nav aria-label="Main navigation"><a href="ai-workflows.html" aria-current="page">AI workflows</a><a href="index.html#showreel">Showreel</a><a href="index.html#work">Work</a><a href="index.html#credits">Credits</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav></div></header>
+
+<main id="main" class="wrap">
+<div class="project-top">
+  <a class="back-link" href="ai-workflows.html"><span aria-hidden="true">←</span> AI workflows</a>
+  <h1 class="project-title">Practice 01</h1>
+</div>
+
+<article class="workflow">
+    <div class="compare" id="compare" style="--pos:50%">
+      <img class="compare-img" src="ai/practice-01-final.jpg" alt="Final image generated in ComfyUI: a Japanese street at golden hour with red paper lanterns and people walking." width="1344" height="768" decoding="async" draggable="false">
+      <img class="compare-img compare-top" src="ai/practice-01-grey.jpg" alt="The grey Blender render the final image was generated from: the same street as plain grey geometry." width="1344" height="768" decoding="async" draggable="false">
+      <span class="compare-label compare-label-left" aria-hidden="true">Grey render</span>
+      <span class="compare-label compare-label-right" aria-hidden="true">Final image</span>
+      <input class="compare-range" type="range" min="0" max="100" step="0.1" value="50" aria-label="Drag to compare the grey render with the final image">
+      <span class="compare-line" aria-hidden="true"></span>
+      <span class="compare-handle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+    </div>
+    <noscript><p class="compare-note">Turn on JavaScript to use the comparison slider.</p></noscript>
+    <div class="steps">
+      <div class="steps-group">
+        <h4>Inputs</h4>
+        <div class="steps-grid">
+          <figure class="step"><a class="image-link" href="ai/practice-01-blender-scene.png" data-title="Blender scene" aria-label="View Blender scene full size"><img src="ai/practice-01-blender-scene.png" alt="The Japanese street scene built from simple blocks, shown in the Blender viewport." width="2000" height="1219" loading="lazy" decoding="async"><span class="expand" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 1.5h4v4M12.5 1.5l-5 5M5.5 12.5h-4v-4M1.5 12.5l5-5"/></svg></span></a><figcaption>Blender scene</figcaption></figure>
+          <figure class="step"><a class="image-link" href="ai/practice-01-depth.png" data-title="Depth pass" aria-label="View Depth pass full size"><img src="ai/practice-01-depth.png" alt="A depth pass of the street: near surfaces are white and the sky is black." width="1344" height="756" loading="lazy" decoding="async"><span class="expand" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 1.5h4v4M12.5 1.5l-5 5M5.5 12.5h-4v-4M1.5 12.5l5-5"/></svg></span></a><figcaption>Depth pass</figcaption></figure>
+          <figure class="step"><a class="image-link" href="ai/practice-01-canny.png" data-title="Canny edge map" aria-label="View Canny edge map full size"><img src="ai/practice-01-canny.png" alt="A black and white Canny edge map tracing the buildings, wires and people." width="1344" height="768" loading="lazy" decoding="async"><span class="expand" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 1.5h4v4M12.5 1.5l-5 5M5.5 12.5h-4v-4M1.5 12.5l5-5"/></svg></span></a><figcaption>Canny edge map</figcaption></figure>
+        </div>
+      </div>
+      <div class="steps-group">
+        <h4>ComfyUI</h4>
+        <figure class="step"><a class="image-link" href="ai/practice-01-comfyui-graph.png" data-title="ComfyUI node graph" aria-label="View ComfyUI node graph full size"><img src="ai/practice-01-comfyui-graph.png" alt="The ComfyUI node graph with a checkpoint, two ControlNets, an edge detector and a KSampler." width="1942" height="1058" loading="lazy" decoding="async"><span class="expand" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 1.5h4v4M12.5 1.5l-5 5M5.5 12.5h-4v-4M1.5 12.5l5-5"/></svg></span></a><figcaption>ComfyUI node graph</figcaption></figure>
+      </div>
+      <div class="steps-group">
+        <h4>Earlier tests</h4>
+        <div class="steps-grid">
+          <figure class="step"><a class="image-link" href="ai/practice-01-test-edges.png" data-title="Earlier test: edge map" aria-label="View Earlier test: edge map full size"><img src="ai/practice-01-test-edges.png" alt="An earlier Canny edge map of the street without people." width="1344" height="768" loading="lazy" decoding="async"><span class="expand" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 1.5h4v4M12.5 1.5l-5 5M5.5 12.5h-4v-4M1.5 12.5l5-5"/></svg></span></a><figcaption>Earlier test: edge map</figcaption></figure>
+          <figure class="step"><a class="image-link" href="ai/practice-01-test-1.jpg" data-title="Earlier test: result 1" aria-label="View Earlier test: result 1 full size"><img src="ai/practice-01-test-1.jpg" alt="An earlier generated result: the street at golden hour with red lanterns and no people." width="1344" height="768" loading="lazy" decoding="async"><span class="expand" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 1.5h4v4M12.5 1.5l-5 5M5.5 12.5h-4v-4M1.5 12.5l5-5"/></svg></span></a><figcaption>Earlier test: result 1</figcaption></figure>
+          <figure class="step"><a class="image-link" href="ai/practice-01-test-2.jpg" data-title="Earlier test: result 2" aria-label="View Earlier test: result 2 full size"><img src="ai/practice-01-test-2.jpg" alt="An earlier generated result: the street in daylight with red lanterns and no people." width="1344" height="768" loading="lazy" decoding="async"><span class="expand" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 1.5h4v4M12.5 1.5l-5 5M5.5 12.5h-4v-4M1.5 12.5l5-5"/></svg></span></a><figcaption>Earlier test: result 2</figcaption></figure>
+        </div>
+      </div>
+    </div>
+</article>
+</main>
+
+<footer><div class="wrap footer-inner"><span>© 2026 Saleem Akthar. Lighting, rendering and environments.</span><a href="#">Back to top ↑</a></div></footer>
+<dialog id="viewer" aria-labelledby="viewer-title"><div class="viewer-top"><p id="viewer-title"></p><button class="close" id="close-viewer" autofocus>Close ×</button></div><img id="viewer-image" alt=""></dialog>
+<script>
+const viewer=document.getElementById('viewer');
+const viewerImage=document.getElementById('viewer-image');
+document.querySelectorAll('.image-link').forEach(function(link){link.addEventListener('click',function(event){
+ if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||typeof viewer.showModal!=='function')return;
+ event.preventDefault();viewerImage.src=link.getAttribute('href');viewerImage.alt=link.querySelector('img').alt;
+ document.getElementById('viewer-title').textContent=link.dataset.title;
+ viewer.showModal();document.body.classList.add('no-scroll');
+});});
+document.getElementById('close-viewer').addEventListener('click',function(){viewer.close();});
+viewer.addEventListener('close',function(){document.body.classList.remove('no-scroll');});
+viewer.addEventListener('click',function(event){if(event.target===viewer){var r=viewer.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)viewer.close();}});
+document.querySelectorAll('.compare').forEach(function(box){
+ var range=box.querySelector('.compare-range');
+ function set(){box.style.setProperty('--pos',range.value+'%');}
+ range.addEventListener('input',set);set();
+});
+</script>
+</body>
+</html>
