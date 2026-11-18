@@ -248,3 +248,12 @@ nav a[aria-current="page"]{color:var(--text);background:var(--surface-2)}
 .practice-card .caption{display:block}
 .practice-card .caption h3{margin:0}
 .project-top .tags{margin:18px 0 22px}
+
+/* Practice 02: video and section titles */
+.reel{position:relative;aspect-ratio:1920/850;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000}
+.reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.block-title{margin:clamp(40px,6vw,64px) 0 16px;font:600 clamp(18px,1.8vw,22px)/1.3 var(--font-display);letter-spacing:-.02em}
+.still{margin:0}
+.still .image-link{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.still .image-link img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.thumb-single::after{display:none}

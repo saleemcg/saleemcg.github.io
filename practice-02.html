@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AI matte painting of a cliff monastery, given real depth and an 8-second parallax camera move with ComfyUI, MoGe-2 and Blender.">
+<meta name="theme-color" content="#0f1110">
+<title>AI Matte Painting with 3D Parallax | AI workflow | Saleem Akthar</title>
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="favicon.png?v=2" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="hero-fx" aria-hidden="true"></div>
+<header><div class="wrap nav"><a class="brand" href="index.html" aria-label="Saleem Akthar home"><img class="brand-logo" src="favicon.svg?v=2" alt="" aria-hidden="true" width="32" height="32">Saleem Akthar</a><nav aria-label="Main navigation"><a href="ai-workflows.html" aria-current="page">AI workflows</a><a href="index.html#showreel">Showreel</a><a href="index.html#work">Work</a><a href="index.html#credits">Credits</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav></div></header>
+
+<main id="main" class="wrap">
+<div class="project-top">
+  <a class="back-link" href="ai-workflows.html"><span aria-hidden="true">←</span> AI workflows</a>
+  <h1 class="project-title">AI Matte Painting with 3D Parallax</h1>
+  <ul class="tags" aria-label="Tools used"><li>ComfyUI</li><li>Qwen Image</li><li>MoGe-2</li><li>Blender</li></ul>
+  <p class="page-lead">A cliff monastery above a misty valley. The painting is generated with Qwen Image 2.1 in ComfyUI, given depth with MoGe-2, then split into layers and projected onto 3D geometry in Blender for camera move with parallax. Fog layers at real depths, sun rays, a waterfall, lanterns, birds and swaying pines are added as an FX pass.</p>
+</div>
+
+<article class="workflow">
+    <div class="reel" id="reel">
+      <video id="reel-video" controls playsinline loop muted preload="metadata" poster="ai/practice-02-poster.jpg" width="1920" height="850" aria-label="Eight-second parallax camera move over the monastery matte painting"><source src="ai/practice-02-shot.mp4" type="video/mp4"></video>
+    </div>
+
+    <h4 class="block-title">Final still</h4>
+    <figure class="still"><a class="image-link" href="ai/practice-02-still-2560.png" data-title="Final still" aria-label="View final still full size"><img src="ai/practice-02-still-2560.jpg" alt="The final still: a cliff monastery above a misty valley at dawn, with a waterfall, glowing lanterns and birds." width="2560" height="1440" loading="lazy" decoding="async"></a></figure>
+    <div class="steps">
+      <div class="steps-group">
+        <h4>Breakdown</h4>
+        <div class="steps-grid">
+          <figure class="step"><a class="image-link" href="ai/practice-02-step1.jpg" data-title="1. AI painting (Qwen Image 2.1)" aria-label="View AI painting (Qwen Image 2.1) full size"><img src="ai/practice-02-step1.jpg" alt="The raw painting generated in ComfyUI at 2560x1440." width="1920" height="1080" loading="lazy" decoding="async"></a></figure>
+          <figure class="step"><a class="image-link" href="ai/practice-02-step2.jpg" data-title="2. Depth (MoGe-2)" aria-label="View Depth (MoGe-2) full size"><img src="ai/practice-02-step2.jpg" alt="Depth and camera field of view estimated from the painting." width="1920" height="1080" loading="lazy" decoding="async"></a></figure>
+          <figure class="step"><a class="image-link" href="ai/practice-02-step3.jpg" data-title="3. Foreground matte" aria-label="View Foreground matte full size"><img src="ai/practice-02-step3.jpg" alt="A depth-based matte separates the rock, pines and grass." width="1920" height="1080" loading="lazy" decoding="async"></a></figure>
+          <figure class="step"><a class="image-link" href="ai/practice-02-step4.jpg" data-title="4. Clean plate (inpaint)" aria-label="View Clean plate (inpaint) full size"><img src="ai/practice-02-step4.jpg" alt="The area behind the foreground is painted in with Qwen Image 2.1 edit." width="1920" height="1080" loading="lazy" decoding="async"></a></figure>
+          <figure class="step"><a class="image-link" href="ai/practice-02-step5.jpg" data-title="5. Projected geometry (Blender)" aria-label="View Projected geometry (Blender) full size"><img src="ai/practice-02-step5.jpg" alt="Both layers projected onto 3D geometry from the matched camera." width="1920" height="1080" loading="lazy" decoding="async"></a></figure>
+          <figure class="step"><a class="image-link" href="ai/practice-02-step6.jpg" data-title="6. Final with FX" aria-label="View Final with FX full size"><img src="ai/practice-02-step6.jpg" alt="The final still with FX: haze simplified, birds, lantern glow and waterfall flow added." width="1920" height="1080" loading="lazy" decoding="async"></a></figure>
+        </div>
+      </div>
+    </div>
+</article>
+</main>
+
+<footer><div class="wrap footer-inner"><span>© 2026 Saleem Akthar. Lighting, rendering and environments.</span><a href="#">Back to top ↑</a></div></footer>
+<dialog id="viewer" aria-labelledby="viewer-title"><div class="viewer-top"><p id="viewer-title"></p><button class="close" id="close-viewer" autofocus>Close ×</button></div><img id="viewer-image" alt=""></dialog>
+<script>
+const viewer=document.getElementById('viewer');
+const viewerImage=document.getElementById('viewer-image');
+document.querySelectorAll('.image-link').forEach(function(link){link.addEventListener('click',function(event){
+ if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||typeof viewer.showModal!=='function')return;
+ event.preventDefault();viewerImage.src=link.getAttribute('href');viewerImage.alt=link.querySelector('img').alt;
+ document.getElementById('viewer-title').textContent=link.dataset.title;
+ viewer.showModal();document.body.classList.add('no-scroll');
+});});
+document.getElementById('close-viewer').addEventListener('click',function(){viewer.close();});
+viewer.addEventListener('close',function(){document.body.classList.remove('no-scroll');});
+viewer.addEventListener('click',function(event){if(event.target===viewer){var r=viewer.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)viewer.close();}});
+</script>
+</body>
+</html>
