@@ -30,7 +30,14 @@
 
 <article class="workflow">
     <div class="reel" id="reel">
-      <video id="reel-video" controls playsinline loop muted preload="metadata" poster="ai/practice-02-poster.jpg" width="1920" height="850" aria-label="Eight-second parallax camera move over the monastery matte painting"><source src="ai/practice-02-shot.mp4" type="video/mp4"></video>
+      <video id="reel-video" playsinline loop muted preload="metadata" poster="ai/practice-02-poster.jpg" width="1920" height="850" aria-label="Eight-second parallax camera move over the monastery matte painting"><source src="ai/practice-02-shot.mp4" type="video/mp4"></video>
+      <button type="button" class="reel-play" id="reel-play" aria-label="Play video"><span class="reel-play-circle"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a.8.8 0 0 0 1.2.7l10.4-6.5a.8.8 0 0 0 0-1.4L9.2 4.8A.8.8 0 0 0 8 5.5z"/></svg></span></button>
+      <div class="reel-controls" id="reel-controls">
+        <button type="button" class="ctl" id="ctl-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a.8.8 0 0 0 1.2.7l10.4-6.5a.8.8 0 0 0 0-1.4L9.2 4.8A.8.8 0 0 0 8 5.5z"/></svg></button>
+        <input class="reel-seek" id="reel-seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Seek">
+        <span class="reel-time" id="reel-time"><span id="t-cur">0:00</span> / <span id="t-dur">0:08</span></span>
+        <button type="button" class="ctl" id="ctl-fs" aria-label="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg></button>
+      </div>
     </div>
 
     <h4 class="block-title">Final still</h4>
@@ -78,6 +85,26 @@ document.querySelectorAll('.image-link').forEach(function(link){link.addEventLis
 document.getElementById('close-viewer').addEventListener('click',function(){viewer.close();});
 viewer.addEventListener('close',function(){document.body.classList.remove('no-scroll');});
 viewer.addEventListener('click',function(event){if(event.target===viewer){var r=viewer.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)viewer.close();}});
+</script>
+<script>
+(function(){
+ var reel=document.getElementById('reel'),v=document.getElementById('reel-video'),
+ big=document.getElementById('reel-play'),btn=document.getElementById('ctl-play'),
+ seek=document.getElementById('reel-seek'),cur=document.getElementById('t-cur'),dur=document.getElementById('t-dur'),fsb=document.getElementById('ctl-fs');
+ var PLAY=btn.innerHTML,PAUSE='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1"/><rect x="13.5" y="5" width="4" height="14" rx="1"/></svg>';
+ function fmt(t){t=Math.max(0,Math.floor(t||0));return Math.floor(t/60)+':'+('0'+(t%60)).slice(-2);}
+ function sync(){var d=v.duration||8,p=d?v.currentTime/d:0;seek.value=Math.round(p*1000);seek.style.setProperty('--p',(p*100)+'%');cur.textContent=fmt(v.currentTime);dur.textContent=fmt(d);}
+ function toggle(){if(v.paused){v.play();}else{v.pause();}}
+ big.addEventListener('click',toggle);btn.addEventListener('click',toggle);v.addEventListener('click',toggle);
+ v.addEventListener('play',function(){reel.classList.add('is-playing');btn.innerHTML=PAUSE;btn.setAttribute('aria-label','Pause');big.setAttribute('aria-label','Pause video');});
+ v.addEventListener('pause',function(){reel.classList.remove('is-playing');btn.innerHTML=PLAY;btn.setAttribute('aria-label','Play');big.setAttribute('aria-label','Play video');});
+ v.addEventListener('timeupdate',sync);v.addEventListener('loadedmetadata',sync);
+ seek.addEventListener('input',function(){var d=v.duration||8;v.currentTime=seek.value/1000*d;sync();});
+ var rf=reel.requestFullscreen||reel.webkitRequestFullscreen;
+ if(!rf){fsb.style.display='none';}
+ fsb.addEventListener('click',function(){var el=document.fullscreenElement||document.webkitFullscreenElement;if(el){(document.exitFullscreen||document.webkitExitFullscreen).call(document);}else{rf.call(reel);}});
+ sync();
+})();
 </script>
 </body>
 </html>
